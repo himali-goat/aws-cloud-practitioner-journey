@@ -36,10 +36,10 @@ With Cloud: Company → Rent infrastructure from AWS → Pay only for usage
 1. Trade Capital Expense for Variable Expense
  
    Traditional IT:
-Buy $100,000 servers upfront
+   Buy $100,000 servers upfront
 
 Cloud:
-Pay $0.10 per hour
+   Pay $0.10 per hour
 
 2. Benefit from Massive Economies of Scale
 
