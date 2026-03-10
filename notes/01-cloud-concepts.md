@@ -1,3 +1,7 @@
+Study Time
+Date: 2026-03-09
+Hours completed: 1
+
 # Day 1 – Cloud Concepts
 
 ## Topics Covered
@@ -13,6 +17,13 @@
 Cloud computing allows organizations to rent computing resources instead of owning physical hardware.
 
 AWS regions consist of multiple Availability Zones for high availability and fault tolerance.
+
+##Plan
+
+Hour 1 – Cloud Fundamentals
+Hour 2 – AWS Global Infrastructure
+Hour 3 – Regions and AZ
+Hour 4 – Edge Locations
 
 ## Study Progress
 
@@ -127,6 +138,8 @@ Try answering these:
 2️⃣ Why does cloud allow faster innovation?
 3️⃣ What does elasticity mean?
 4️⃣ What problem does capacity planning solve?
+
+
 
 ## Questions
 
