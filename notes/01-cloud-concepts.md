@@ -56,13 +56,7 @@ The 6 Key Benefits of Cloud (These appear frequently in the exam)
   Too little hardware → system crashes
   Cloud solves this with elastic scaling.
   Example:
-  Traffic spike
-  ↓
-  Automatically add servers
-  ↓
-  Traffic drops
-  ↓
-  Remove servers
+  Traffic spike -> Automatically add servers -> Traffic drops -> Remove servers
 
 4. Increase Speed and Agility
 
