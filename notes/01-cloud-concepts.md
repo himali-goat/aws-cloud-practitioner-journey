@@ -107,6 +107,19 @@ Hybrid Cloud:	Mix of on-prem + cloud
 
 Example hybrid: On-prem: database --> AWS: Application servers
 
+**Service Models**
+This is very likely to appear on the exam.
+## Cloud Service Models
+
+### Infrastructure as a Service (IaaS)
+Example: Amazon EC2
+
+### Platform as a Service (PaaS)
+Example: Elastic Beanstalk
+
+### Software as a Service (SaaS)
+Example: Gmail
+
 **Quick Knowledge Check (important)**
 
 Try answering these:
