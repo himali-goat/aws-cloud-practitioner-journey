@@ -31,6 +31,64 @@ Instead of: Company → Buy hardware → Install → Maintain → Replace every 
 
 With Cloud: Company → Rent infrastructure from AWS → Pay only for usage
 
+The 6 Key Benefits of Cloud (These appear frequently in the exam)
+
+1. Trade Capital Expense for Variable Expense
+ 
+   Traditional IT: Buy $100,000 servers upfront
+   With Cloud: Pay $0.10 per hour when you use it
+   This is OPEX instead of CAPEX.
+
+2. Benefit from Massive Economies of Scale
+
+  Large cloud providers like Amazon Web Services buy hardware in huge volumes. This results in customer paying less.
+  Example:
+  AWS buys 1,000,000 servers
+  ↓
+  Lower cost per server
+  ↓
+  Lower price for customers
+
+4. Stop Guessing Capacity
+
+  Traditional problem:
+  Too much hardware → wasted money
+  Too little hardware → system crashes
+  Cloud solves this with elastic scaling.
+  Example:
+  Traffic spike
+  ↓
+  Automatically add servers
+  ↓
+  Traffic drops
+  ↓
+  Remove servers
+
+4. Increase Speed and Agility
+
+  Traditional IT:
+  Provision server = weeks
+  Cloud:
+  Provision server = minutes
+  This allows faster innovation.
+
+5. Stop Spending Money Running Data Centers
+  Cloud provider handles:
+    hardware
+    power
+    cooling
+    networking
+    security
+  Your company focuses on applications.
+
+6. Go Global in Minutes
+  Example:
+  Deploy application in:
+  USA
+  Europe
+  Asia
+  No need to build data centers.
+
 ## Questions
 
 - What is the difference between Region and Availability Zone?
