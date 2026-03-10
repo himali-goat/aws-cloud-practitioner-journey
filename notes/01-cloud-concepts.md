@@ -19,7 +19,7 @@ Cloud computing allows organizations to rent computing resources instead of owni
 
 AWS regions consist of multiple Availability Zones for high availability and fault tolerance.
 
-**Plan**
+**Hourly Plan**
 
 Hour 1 – Cloud Fundamentals
 Hour 2 – AWS Global Infrastructure
