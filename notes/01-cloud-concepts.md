@@ -6,11 +6,12 @@ Hours completed: 1
 
 ## Topics Covered
 
-- What is Cloud Computing
-- AWS Global Infrastructure
-- Regions
-- Availability Zones
-- Edge Locations
+1. What is Cloud Computing
+2. Benefits of Cloud
+3. Cloud Characteristics
+4. Deployment Models
+5. Service Models
+6. Knowledge Check
 
 ## Key Ideas
 
