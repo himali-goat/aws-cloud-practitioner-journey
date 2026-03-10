@@ -35,9 +35,11 @@ With Cloud: Company → Rent infrastructure from AWS → Pay only for usage
 
 1. Trade Capital Expense for Variable Expense
  
-   Traditional IT: Buy $100,000 servers upfront
-   With Cloud: Pay $0.10 per hour when you use it
-   This is OPEX instead of CAPEX.
+   Traditional IT:
+Buy $100,000 servers upfront
+
+Cloud:
+Pay $0.10 per hour
 
 2. Benefit from Massive Economies of Scale
 
@@ -49,7 +51,7 @@ With Cloud: Company → Rent infrastructure from AWS → Pay only for usage
   ↓
   Lower price for customers
 
-4. Stop Guessing Capacity
+3. Stop Guessing Capacity
 
   Traditional problem:
   Too much hardware → wasted money
