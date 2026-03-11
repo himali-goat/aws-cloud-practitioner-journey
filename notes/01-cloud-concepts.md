@@ -141,6 +141,104 @@ Try answering these:
 4️⃣ What problem does capacity planning solve?
 
 
+#### Hour 2: AWS Global INnfrastructure
+
+AWS operates a global network of data centers designed for high availability, fault tolerance, and low latency.
+The infrastructure has four main components:
+     Regions
+     Availability Zones
+     Edge Locations
+     Regional Edge Caches
+
+1. AWS Region
+   A Region is a geographical area where AWS has multiple data centers.
+   Example:
+   | Region     | Location          |
+   | ---------- | ----------------- |
+   | us-east-1  | Northern Virginia |
+   | us-west-2  | Oregon            |
+   | eu-west-1  | Ireland           |
+   | ap-south-1 | Mumbai            |
+
+Example Architecture
+Application
+   |
+AWS Region (us-west-2)
+
+Each region is indeppendent from other region.
+Why?
+- Fault isolation
+- data sovereignty
+- latency optimization
+
+Example:
+US users -> US Region
+Europe users ->EU Region
+
+2. Availability Zone (AZ)
+Each Region contains multiple Availability Zones (AZ).
+An AZ is one or more data centers with:
+- independent power
+- indeppendent cooling
+- independent networking
+
+Example
+
+Region: us-west-2
+    ├ AZ-a
+    ├ AZ-b
+    └ AZ-c
+AZs are connected by **high-speed** fiber networks.
+
+**Why AZs matter?**: If one data centers fails, traffic moved to another. AZ-a faile, traffic moves to AZ-b. This ensures *high availability* architecture.
+Example design: Load balancer | EC2 in AZ-a. EC2 in AZ-b. This is multi-AZ architecture.
+
+3. Edge Locations: These are smaler sites distributed globally that cache content closer to users. This is used mainly by
+   - CloudFront
+   - Route53
+   - AWS Shield
+Example:
+    User in Tokyo
+    ↓
+    Edge location in Tokyo
+    ↓
+    Fetch content from US region
+ 
+ Purpose: Reduce latency. Faster content delivery.
+
+4. Regional Edge Cache: This sits between Edge Location and AWS Region
+
+Purpose: store frequently accessed content. reduce load on origin server.
+
+Summary:
+
+    User
+     |
+    Edge Location
+     |
+    Regional Edge Cache
+     |
+    AWS Region
+     |        |
+    AZ-A    AZ-B
+     |        |
+    Servers  Servers
+
+**Rational behind AWS Global Infrastructure:**
+- High Availability
+- Fault isolation
+- Global Scalability
+- Low Latency
+
+### Key ideas learned:
+- Regions contain multiple Availability Zones
+- AZs are isolated data centers
+- Edge locations improve latency
+- Multi-AZ architecture improves fault tolerance
+
+Example services:
+CloudFront
+Route53
 
 ## Questions
 
