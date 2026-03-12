@@ -240,6 +240,349 @@ Example services:
 CloudFront
 Route53
 
-## Questions
+## Hour 3 – Cloud Service Models
 
-- What is the difference between Region and Availability Zone?
+Cloud services are delivered in three main models.  
+Each model defines how much responsibility the customer has versus the cloud provider.
+
+As we move from IaaS → PaaS → SaaS, the amount of infrastructure management by the customer decreases.
+
+---
+
+### 1. Infrastructure as a Service (IaaS)
+
+Infrastructure as a Service provides virtual servers and infrastructure resources.
+
+Customer manages:
+- Operating system
+- Applications
+- Runtime
+- Middleware
+- Data
+- Security configuration
+
+Cloud provider manages:
+- Physical servers
+- Storage hardware
+- Networking
+- Virtualization
+
+Example AWS service:
+Amazon EC2
+
+Example architecture:
+
+Application  
+Operating System  
+Runtime  
+----------------  
+AWS manages  
+Server  
+Storage  
+Networking  
+
+Typical use cases:
+- Migrating on-premise servers to the cloud
+- Running custom server environments
+- Applications requiring full OS control
+
+---
+
+### 2. Platform as a Service (PaaS)
+
+Platform as a Service provides a platform where developers deploy code without managing infrastructure.
+
+Customer manages:
+- Application code
+- Application configuration
+
+Cloud provider manages:
+- Operating system
+- Runtime
+- Infrastructure
+- Scaling
+- Load balancing
+
+Example AWS service:
+AWS Elastic Beanstalk
+
+Example workflow:
+
+Developer uploads code  
+↓  
+AWS provisions servers  
+↓  
+Application runs  
+
+Typical use cases:
+- Web applications
+- APIs
+- Microservices
+
+---
+
+### 3. Software as a Service (SaaS)
+
+Software as a Service provides fully managed applications delivered over the internet.
+
+Customer manages:
+- User settings
+- Application configuration
+
+Provider manages:
+- Infrastructure
+- Platform
+- Application software
+- Updates
+- Security patches
+
+Examples:
+- Google Workspace
+- Salesforce
+- Microsoft 365
+
+Example flow:
+
+User  
+↓  
+Web browser  
+↓  
+Cloud-hosted application  
+
+No infrastructure management is required.
+
+---
+
+### Comparison Summary
+
+| Model | Customer Manages | Provider Manages |
+|------|------------------|------------------|
+| IaaS | OS + Applications | Infrastructure |
+| PaaS | Applications | OS + Infrastructure |
+| SaaS | User settings | Everything else |
+
+---
+
+### AWS Example Mapping
+
+| Service Model | AWS Example |
+|---|---|
+| IaaS | Amazon EC2 |
+| PaaS | AWS Elastic Beanstalk |
+| Serverless / PaaS style | AWS Lambda |
+| SaaS | Cloud-based applications |
+
+---
+
+### Key Exam Tip
+
+Management responsibility decreases in this order:
+
+IaaS → PaaS → SaaS
+
+The service model that requires the least infrastructure management from the customer is **SaaS**.
+
+---
+
+### Knowledge Check
+
+1. What does IaaS allow customers to control that PaaS does not?
+2. Which model requires the least infrastructure management?
+3. Which AWS service is an example of IaaS?
+4. What is the main benefit of PaaS for developers?
+
+## Hour 4 – AWS Shared Responsibility Model
+
+The AWS Shared Responsibility Model defines which security responsibilities belong to AWS and which belong to the customer.
+
+The basic idea is:
+
+AWS secures **the cloud**  
+Customers secure **what they put in the cloud**
+
+---
+
+### AWS Responsibilities (Security OF the Cloud)
+
+AWS is responsible for protecting the infrastructure that runs AWS services.
+
+This includes:
+
+- Physical data centers
+- Hardware and servers
+- Networking infrastructure
+- Storage hardware
+- Virtualization layer (hypervisor)
+
+Example responsibilities:
+
+- Data center security
+- Power and cooling systems
+- Network infrastructure protection
+- Hardware maintenance
+
+---
+
+### Customer Responsibilities (Security IN the Cloud)
+
+Customers are responsible for securing the resources they deploy on AWS.
+
+This includes:
+
+- Operating system configuration
+- Application security
+- Identity and access management
+- Data protection
+- Security group configuration
+- Patching operating systems
+
+Example responsibilities:
+
+- Updating OS patches on EC2
+- Configuring firewalls
+- Encrypting sensitive data
+- Managing user access
+
+---
+
+### Visual Explanation
+
+Customer manages:
+
+Applications  
+Operating System  
+Configuration  
+User Access  
+Data  
+
+----------------
+
+AWS manages:
+
+Physical Servers  
+Networking  
+Storage Hardware  
+Data Center Security  
+
+---
+
+### Responsibility Changes by Service Type
+
+The customer's responsibility depends on the service used.
+
+| Service | Customer Responsibility |
+|------|-------------------------|
+| EC2 | OS, applications, configuration |
+| S3 | Data and access permissions |
+| Lambda | Application code |
+| RDS | Database configuration |
+
+---
+
+### Example Scenario
+
+If you run an application on Amazon EC2:
+
+AWS secures:
+- Physical servers
+- Networking infrastructure
+- Data centers
+
+Customer secures:
+- Operating system
+- Application software
+- Security patches
+- User access permissions
+
+---
+
+### Key Exam Concept
+
+AWS always secures **the infrastructure of the cloud**, while customers secure **their workloads and data in the cloud**.
+
+---
+
+### Knowledge Check
+
+1. What does AWS secure in the shared responsibility model?
+2. What does the customer secure?
+3. Who is responsible for operating system patches on EC2?
+4. Who secures the physical data center infrastructure?
+
+## Self Test Questions
+Day 1 Self-Test (10 Questions)
+1
+What is the main benefit of cloud computing compared to traditional infrastructure?
+A. Higher electricity usage
+B. Pay only for what you use
+C. More physical hardware
+D. Fixed server capacity
+2
+Which term describes the ability to automatically increase or decrease resources based on demand?
+A. Availability
+B. Elasticity
+C. Compliance
+D. Pooling
+3
+Which of the following is an AWS Region?
+A. us-west-2
+B. AZ-A
+C. Edge-1
+D. EC2-zone
+4
+What is an Availability Zone (AZ)?
+A. A physical data center inside a region
+B. A DNS service
+C. A cloud application
+D. A global network
+5
+Why do architects deploy applications across multiple Availability Zones?
+A. To increase cost
+B. To improve fault tolerance
+C. To reduce storage
+D. To limit scaling
+6
+Which service model allows customers to manage the operating system and applications?
+A. SaaS
+B. PaaS
+C. IaaS
+D. FaaS
+7
+Which service model requires the least infrastructure management by the customer?
+A. IaaS
+B. SaaS
+C. PaaS
+D. Hybrid
+8
+In the Shared Responsibility Model, who is responsible for data center hardware security?
+A. Customer
+B. AWS
+C. Both
+D. Application developer
+9
+In the Shared Responsibility Model, who is responsible for patching the operating system on EC2?
+A. AWS
+B. Customer
+C. Edge locations
+D. CloudFront
+10
+Which AWS infrastructure component helps deliver content to users with low latency?
+A. Availability Zones
+B. Edge Locations
+C. Regions
+D. VPC
+
+| Question | Your Answer | Correct Answer | Result |
+| -------- | ----------- | -------------- | ------ |
+| 1        | B           | B              | ✅      |
+| 2        | B           | B              | ✅      |
+| 3        | A           | A              | ✅      |
+| 4        | A           | A              | ✅      |
+| 5        | B           | B              | ✅      |
+| 6        | C           | C              | ✅      |
+| 7        | B           | B              | ✅      |
+| 8        | B           | B              | ✅      |
+| 9        | B           | B              | ✅      |
+| 10       | B           | B              | ✅      |
+
+I moved on to day 2.
