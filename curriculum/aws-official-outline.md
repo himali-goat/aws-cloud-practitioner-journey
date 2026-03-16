@@ -2,6 +2,7 @@
 
 Source  
 https://aws.amazon.com/certification/certified-cloud-practitioner/
+
 https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html
 
 ## Domains
