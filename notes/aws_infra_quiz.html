@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Global Infrastructure — Cloud Practitioner Study Guide</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f0; color: #1a1a18; padding: 24px 16px; max-width: 780px; margin: 0 auto; }
+  h1 { font-size: 20px; font-weight: 500; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #73726c; margin-bottom: 20px; }
+  svg { width: 100%; margin-bottom: 16px; border-radius: 12px; background: #fff; border: 0.5px solid #d3d1c7; padding: 8px; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #888780; margin: 16px 0 8px; }
+  .layer-wrap { border: 0.5px solid #d3d1c7; border-radius: 12px; margin-bottom: 10px; overflow: hidden; background: #fff; }
+  .layer-header { display: flex; align-items: center; gap: 12px; padding: 12px 16px; cursor: pointer; user-select: none; background: #f1efe8; }
+  .layer-header:hover { background: #e8e6de; }
+  .layer-badge { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+  .layer-title { font-size: 14px; font-weight: 500; flex: 1; }
+  .layer-sub { font-size: 12px; color: #73726c; }
+  .layer-body { padding: 14px 16px; border-top: 0.5px solid #d3d1c7; display: none; }
+  .layer-body.open { display: block; }
+  .chevron { font-size: 12px; color: #888780; transition: transform 0.2s; display: inline-block; }
+  .chevron.open { transform: rotate(90deg); }
+  .fact-row { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
+  .fact-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .fact-text { font-size: 13px; color: #5f5e5a; line-height: 1.5; }
+  .exam-tip { background: #e6f1fb; border-left: 2px solid #378add; border-radius: 0 8px 8px 0; padding: 8px 12px; margin-top: 10px; font-size: 12px; color: #185fa5; }
+  .example-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .chip { font-size: 11px; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #b4b2a9; color: #5f5e5a; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1e1e1c; color: #e0ddd4; }
+    svg { background: #2a2a27; border-color: #444441; }
+    .layer-wrap { background: #2a2a27; border-color: #444441; }
+    .layer-header { background: #323230; }
+    .layer-header:hover { background: #3a3a37; }
+    .layer-body { border-color: #444441; }
+    .fact-text { color: #b4b2a9; }
+    .exam-tip { background: #0c447c; color: #b5d4f4; border-color: #378add; }
+    .chip { border-color: #5f5e5a; color: #b4b2a9; }
+    .layer-sub { color: #888780; }
+    .subtitle { color: #888780; }
+    .section-label { color: #5f5e5a; }
+    .chevron { color: #5f5e5a; }
+  }
+</style>
+</head>
+<body>
+
+<h1>AWS global infrastructure</h1>
+<p class="subtitle">Cloud Practitioner exam study guide — tap each layer to expand</p>
+
+<svg viewBox="0 0 680 260">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <!-- Outer: Global -->
+  <rect x="20" y="14" width="640" height="236" rx="14" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="340" y="38" text-anchor="middle" font-size="14" font-weight="500" fill="#0C447C" font-family="-apple-system,sans-serif">AWS global infrastructure</text>
+  <!-- Region -->
+  <rect x="42" y="54" width="596" height="180" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="62" y="72" font-size="12" fill="#085041" font-family="-apple-system,sans-serif">Region (e.g. us-east-1)</text>
+  <!-- AZ 1 -->
+  <rect x="62" y="84" width="168" height="134" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="82" y="102" font-size="12" fill="#3C3489" font-family="-apple-system,sans-serif">AZ — us-east-1a</text>
+  <rect x="78" y="110" width="136" height="36" rx="4" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="146" y="132" text-anchor="middle" font-size="12" fill="#26215C" font-family="-apple-system,sans-serif">Data center 1</text>
+  <rect x="78" y="152" width="136" height="36" rx="4" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="146" y="174" text-anchor="middle" font-size="12" fill="#26215C" font-family="-apple-system,sans-serif">Data center 2</text>
+  <!-- AZ 2 -->
+  <rect x="256" y="84" width="168" height="134" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="276" y="102" font-size="12" fill="#3C3489" font-family="-apple-system,sans-serif">AZ — us-east-1b</text>
+  <rect x="272" y="110" width="136" height="36" rx="4" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="340" y="132" text-anchor="middle" font-size="12" fill="#26215C" font-family="-apple-system,sans-serif">Data center 3</text>
+  <rect x="272" y="152" width="136" height="36" rx="4" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="340" y="174" text-anchor="middle" font-size="12" fill="#26215C" font-family="-apple-system,sans-serif">Data center 4</text>
+  <!-- AZ 3 -->
+  <rect x="450" y="84" width="168" height="134" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="470" y="102" font-size="12" fill="#3C3489" font-family="-apple-system,sans-serif">AZ — us-east-1c</text>
+  <rect x="466" y="110" width="136" height="36" rx="4" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="534" y="132" text-anchor="middle" font-size="12" fill="#26215C" font-family="-apple-system,sans-serif">Data center 5</text>
+  <rect x="466" y="152" width="136" height="36" rx="4" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="534" y="174" text-anchor="middle" font-size="12" fill="#26215C" font-family="-apple-system,sans-serif">Data center 6</text>
+  <!-- Private links -->
+  <line x1="230" y1="151" x2="255" y2="151" stroke="#7F77DD" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+  <line x1="424" y1="151" x2="449" y2="151" stroke="#7F77DD" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+  <text x="243" y="146" text-anchor="middle" font-size="10" fill="#534AB7" font-family="-apple-system,sans-serif">private</text>
+  <text x="243" y="159" text-anchor="middle" font-size="10" fill="#534AB7" font-family="-apple-system,sans-serif">link</text>
+  <text x="437" y="146" text-anchor="middle" font-size="10" fill="#534AB7" font-family="-apple-system,sans-serif">private</text>
+  <text x="437" y="159" text-anchor="middle" font-size="10" fill="#534AB7" font-family="-apple-system,sans-serif">link</text>
+</svg>
+
+<p class="section-label">Tap each layer to study — key facts + exam tips</p>
+<div id="layers"></div>
+
+<script>
+const layers = [
+  {
+    badgeBg: "#E6F1FB", badgeColor: "#0C447C", dotColor: "#185FA5",
+    badge: "Layer 1", title: "Data centers",
+    sub: "Physical buildings housing servers, storage, and networking",
+    facts: [
+      "Each data center houses tens of thousands of servers.",
+      "They have redundant power, cooling, and networking.",
+      "Customers never choose or interact with individual data centers directly.",
+      "Each DC belongs to exactly one Availability Zone."
+    ],
+    tip: "Exam tip: You cannot choose a specific data center — only an AZ or Region.",
+    examples: ["Servers", "Storage arrays", "Network switches", "UPS power"]
+  },
+  {
+    badgeBg: "#EEEDFE", badgeColor: "#3C3489", dotColor: "#534AB7",
+    badge: "Layer 2", title: "Availability Zones (AZs)",
+    sub: "One or more discrete data centers with redundant power and connectivity",
+    facts: [
+      "Each region has a minimum of 3 AZs (some have 6).",
+      "AZs are physically separate — typically tens of miles apart.",
+      "They are connected via high-speed private fiber links.",
+      "AZ IDs look like: us-east-1a, us-east-1b, us-east-1c.",
+      "Deploying across multiple AZs protects against a single point of failure.",
+      "AZ names are randomized per account to distribute load."
+    ],
+    tip: "Exam tip: AZs = fault isolation boundary. Multi-AZ = high availability.",
+    examples: ["us-east-1a", "eu-west-1b", "ap-southeast-1c"]
+  },
+  {
+    badgeBg: "#E1F5EE", badgeColor: "#085041", dotColor: "#0F6E56",
+    badge: "Layer 3", title: "Regions",
+    sub: "A geographic cluster of 3+ AZs in the same area",
+    facts: [
+      "AWS has 30+ regions worldwide as of 2024.",
+      "Each region is fully independent — data does not leave a region unless you move it.",
+      "Region names: us-east-1 (N. Virginia), eu-west-1 (Ireland), ap-southeast-1 (Singapore).",
+      "You choose the region when you create resources.",
+      "Considerations: latency, compliance, pricing, service availability.",
+      "Not all AWS services are available in every region."
+    ],
+    tip: "Exam tip: Data sovereignty — by default, your data stays in the region you choose.",
+    examples: ["us-east-1", "us-west-2", "eu-central-1", "ap-northeast-1"]
+  },
+  {
+    badgeBg: "#FAEEDA", badgeColor: "#633806", dotColor: "#854F0B",
+    badge: "Layer 4", title: "Edge locations and CloudFront",
+    sub: "Points of presence that cache content closer to end users",
+    facts: [
+      "There are 400+ edge locations globally — far more than regions.",
+      "Used by CloudFront (CDN), Route 53, and AWS Global Accelerator.",
+      "Edge locations are NOT regions and do not have the full range of AWS services.",
+      "They reduce latency by serving cached content from a location near the user.",
+      "Regional edge caches sit between origin servers and edge locations."
+    ],
+    tip: "Exam tip: Edge locations > AZs > Regions in count. CloudFront uses edge locations, not regions.",
+    examples: ["CloudFront PoP", "Route 53", "Global Accelerator", "Lambda@Edge"]
+  },
+  {
+    badgeBg: "#FAECE7", badgeColor: "#712B13", dotColor: "#993C1D",
+    badge: "Layer 5", title: "Local zones and Wavelength zones",
+    sub: "Extensions of a region for specific cities or 5G networks",
+    facts: [
+      "Local Zones place AWS compute in metros not covered by a region (e.g. Los Angeles).",
+      "Wavelength Zones embed AWS compute inside telecom 5G networks for ultra-low latency.",
+      "Outposts bring AWS hardware physically into your own data center.",
+      "These are all extensions of a parent region — not independent regions."
+    ],
+    tip: "Exam tip: Ultra-low latency or 5G question? Think Wavelength Zones.",
+    examples: ["Local Zone: LA", "Wavelength: Verizon 5G", "Outposts: on-prem"]
+  }
+];
+
+const container = document.getElementById('layers');
+
+layers.forEach(function(l, i) {
+  const wrap = document.createElement('div');
+  wrap.className = 'layer-wrap';
+
+  const header = document.createElement('div');
+  header.className = 'layer-header';
+  header.innerHTML =
+    '<span class="layer-badge" style="background:' + l.badgeBg + ';color:' + l.badgeColor + '">' + l.badge + '</span>' +
+    '<span class="layer-title">' + l.title + '</span>' +
+    '<span class="layer-sub">' + l.sub + '</span>' +
+    '<span class="chevron" id="chev-' + i + '">›</span>';
+
+  const body = document.createElement('div');
+  body.className = 'layer-body';
+  body.id = 'body-' + i;
+
+  const factsHtml = l.facts.map(function(f) {
+    return '<div class="fact-row"><span class="fact-dot" style="background:' + l.dotColor + '"></span><span class="fact-text">' + f + '</span></div>';
+  }).join('');
+
+  const chipsHtml = l.examples.map(function(e) {
+    return '<span class="chip">' + e + '</span>';
+  }).join('');
+
+  body.innerHTML = factsHtml +
+    '<div class="exam-tip">' + l.tip + '</div>' +
+    '<div class="example-chips">' + chipsHtml + '</div>';
+
+  header.addEventListener('click', function() {
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    document.getElementById('chev-' + i).classList.toggle('open', !isOpen);
+  });
+
+  wrap.appendChild(header);
+  wrap.appendChild(body);
+  container.appendChild(wrap);
+});
+
+document.getElementById('body-0').classList.add('open');
+document.getElementById('chev-0').classList.add('open');
+</script>
+</body>
+</html>
