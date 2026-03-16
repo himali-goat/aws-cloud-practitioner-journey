@@ -1,3 +1,13 @@
+# Day 2
+
+| Hour   | Topic                | Key Concepts                                                 |
+| ------ | -------------------- | ------------------------------------------------------------ |
+| Hour 1 | EC2 Fundamentals     | EC2 instances, AMI, instance types, security groups, ports   |
+| Hour 2 | EC2 Pricing Models   | On-Demand, Reserved Instances, Spot Instances, Savings Plans |
+| Hour 3 | Scaling Architecture | Load Balancing, Auto Scaling                                 |
+| Hour 4 | Serverless Compute   | Lambda, serverless architecture                              |
+
+
 ## Hour 1 – Amazon EC2
 
 EC2 provides virtual servers in the cloud.
