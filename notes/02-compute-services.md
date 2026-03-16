@@ -21,7 +21,7 @@ Key concepts:
 Example use case:
 Running web applications on virtual servers.
 
-**Architecture**
+** Example 1; Architecture**
 A typical AWS web architecture looks like this:
 Internet
    ↓
@@ -32,6 +32,31 @@ Load Balancer
 EC2 Instances
    ↓
 Database
+
+** Example 2: Architecture **
+
+Internet
+   │
+   └── Port 443 (HTTPS)
+        │
+   Application Load Balancer
+        │
+   Auto Scaling Group
+        │
+   EC2 Instances
+        │
+   Database (RDS / DynamoDB)
+
+** Common Port Diagram **
+
+Client
+   │
+   ├── Port 22   → SSH (Linux EC2)
+   ├── Port 3389 → RDP (Windows EC2)
+   ├── Port 80   → HTTP (Web traffic)
+   └── Port 443  → HTTPS (Secure web traffic)
+
+
 
 ## Hour 1 Self Test
 
