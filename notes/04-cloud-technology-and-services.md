@@ -1,4 +1,4 @@
-# AWS Cloud Practitioner — Domain 3 Exam Notes  
+# DAY 4: AWS Cloud Practitioner — Domain 3 Exam Notes  
 **Author:** Rabindra  
 **Domain:** 3 — Cloud Technology & Services  
 **Format:** High‑yield, exam‑ready, concise
